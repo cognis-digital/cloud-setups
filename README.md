@@ -34,5 +34,18 @@ In the spirit of `firebase/firebase-tools`, `GoogleCloudPlatform/cloud-run-sampl
 and the `awesome-firebase` / `awesome-gcp` / `awesome-azure` lists — consolidated and rebranded. PRs to
 add stacks (Supabase, Cloudflare, Fly.io) welcome.
 
+## How it fits
+
+```mermaid
+flowchart LR
+  U[You / CI / Agent] --> R[cloud-setups]
+  R --> O[Outputs & artifacts]
+  R --> M[MCP / JSON]
+  M --> AI[AI agents]
+  R --> S[Cognis Neural Suite]
+```
+
+**Explore the suite →** [🗂️ all tools](https://github.com/cognis-digital/cognis-neural-suite) · [⭐ awesome-cognis](https://github.com/cognis-digital/awesome-cognis) · [🔗 cognis-sources](https://github.com/cognis-digital/cognis-sources)
+
 ## License
 COCL v1.0 — see [LICENSE](LICENSE).
