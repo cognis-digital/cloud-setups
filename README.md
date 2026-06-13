@@ -11,6 +11,26 @@
 A merged, rebranded starter kit distilling the patterns from the popular cloud-starter ecosystem into
 one place — copy a folder, set your IDs, deploy.
 
+## Usage — step by step
+
+1. **Get the repo** and pick the stack folder you need:
+   ```bash
+   git clone https://github.com/cognis-digital/cloud-setups && cd cloud-setups
+   ```
+   Each folder is self-contained: [`firebase/`](firebase/), [`gcp/`](gcp/), [`azure/`](azure/).
+2. **Set your project IDs / credentials** for the target cloud (e.g. `PROJECT_ID`, `gcloud auth`, `az login`, `firebase login`).
+3. **Bootstrap & deploy** the chosen stack with its bundled script:
+   ```bash
+   cd firebase && bash deploy.sh                 # Firebase (emulators by default)
+   PROJECT_ID=my-proj bash gcp/bootstrap.sh      # GCP: enable APIs + Cloud Run
+   bash azure/bootstrap.sh                       # Azure Container Apps
+   ```
+4. **Inspect the result** — Firebase deploy boots the full emulator suite locally; GCP/Azure print the deployed service URL. Hit it to confirm the deploy:
+   ```bash
+   curl -s "$SERVICE_URL"
+   ```
+5. **Manage as IaC in CI** — the GCP (Terraform `google_cloud_run_v2_service`) and Azure (Bicep + Terraform `azurerm`) definitions are committed, so a pipeline can `terraform apply` the same infra on every change.
+
 ## Firebase  ·  [`firebase/`](firebase/)
 `firebase.json`, Firestore rules + indexes, Cloud Functions, Hosting SPA rewrite, full **emulator suite**, `deploy.sh`.
 ```bash
