@@ -11,6 +11,45 @@
 A merged, rebranded starter kit distilling the patterns from the popular cloud-starter ecosystem into
 one place — copy a folder, set your IDs, deploy.
 
+
+<!-- cognis:example:start -->
+## 🔎 Example output
+
+**Sample result format** _(illustrative values — run on your own data for real findings):_
+
+```
+{
+  "cloud_setups": [
+    {
+      "name": "dev-env",
+      "description": "Development environment for project XYZ",
+      "aws": {
+        "region": "us-west-2",
+        "instance_type": "t2.micro"
+      },
+      "gcp": {
+        "zone": "us-central1-a",
+        "machine_type": "f1-micro"
+      }
+    },
+    {
+      "name": "prod-env",
+      "description": "Production environment for project ABC",
+      "aws": {
+        "region": "eu-west-1",
+        "instance_type": "c5.xlarge"
+      },
+      "gcp": {
+        "zone": "europe-west2-a",
+        "machine_type": "n1-standard-4"
+      }
+    }
+  ]
+}
+```
+
+<!-- cognis:example:end -->
+
 ## Usage — step by step
 
 1. **Get the repo** and pick the stack folder you need:
